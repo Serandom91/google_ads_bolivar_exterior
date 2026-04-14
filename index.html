@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Constructora Bolívar | Compra desde el exterior</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde-bolivar: #095636;
+      --verde-brand: #00843D;
+      --negro: #333E33;
+      --gris-secundario: #6C757D;
+      --gris-light: #E9EEF2;
+      --white: #FFFFFF;
+      --bg: #E4DDD9;
+      --bg-medio: #EFECEC;
+      --bg-light: #FCFAF9;
+      --amarillo: #FED141;
+      --amarillo-bg: #EADEB3;
+      --card-bg: rgba(252, 250, 249, 0.45);
+      --sombra-xl: 0px 35px 30.5px 0px rgba(0, 0, 0, 0.12);
+      --font-heading: 'Roboto Condensed', sans-serif;
+      --font-body: 'Roboto', sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--negro);
+      background: var(--bg-medio);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    .hero__bg {
+      line-height: 0;
+    }
+    .hero__bg img {
+      width: 100%;
+      height: auto;
+    }
+    .hero__content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 0 64px;
+    }
+    .hero__logo {
+      width: 90px;
+      height: 113px;
+      display: block;
+    }
+    .hero__text {
+      padding-top: 36px;
+      max-width: 588px;
+    }
+    .hero__title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 46px;
+      line-height: 52px;
+      color: var(--negro);
+    }
+    .hero__subtitle {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 0.5px;
+      color: var(--negro);
+      margin-top: 6px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      background: var(--verde-bolivar);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: -0.5px;
+      padding: 14px 42px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      height: 48px;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #073d27; }
+    .btn-primary svg { margin-left: 2px; }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      background: transparent;
+      color: var(--verde-bolivar);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: -0.5px;
+      padding: 14px 42px;
+      border-radius: 30px;
+      border: 1px solid var(--verde-bolivar);
+      cursor: pointer;
+      height: 48px;
+      width: 100%;
+      transition: background 0.2s;
+    }
+    .btn-outline:hover { background: rgba(9, 86, 54, 0.05); }
+    .hero__cta { margin-top: 18px; }
+
+    /* ========== BENEFITS ========== */
+    .benefits {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 0 24px;
+    }
+    .section-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 38px;
+      letter-spacing: -0.5px;
+      color: var(--negro);
+      text-align: center;
+    }
+    .benefits__grid {
+      display: flex;
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .benefit-card {
+      flex: 1;
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: var(--sombra-xl);
+    }
+    .benefit-card__icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+    .benefit-card__icon img {
+      width: 100%;
+      height: 100%;
+    }
+    .benefit-card__title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 26px;
+      color: var(--negro);
+    }
+    .benefit-card__text {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 0.5px;
+      color: var(--negro);
+      margin-top: 6px;
+    }
+
+    /* ========== PROJECTS ========== */
+    .projects {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 0 24px;
+    }
+    .projects__grid {
+      display: flex;
+      gap: 36px;
+      margin-top: 24px;
+    }
+    .project-card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .project-card__image {
+      width: 100%;
+      height: 120px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+    .project-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .project-card__name {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: -0.25px;
+      color: var(--negro);
+    }
+    .project-card__info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .project-card__detail {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 0.5px;
+      color: var(--negro);
+    }
+    .project-card__detail svg,
+    .project-card__detail img {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+    .project-card__cta {
+      margin-top: 12px;
+    }
+
+    /* ========== FORM SECTION ========== */
+    .form-section {
+      background: var(--bg);
+      padding: 24px 0;
+    }
+    .form-section__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 120px;
+      text-align: center;
+    }
+    .form-section__desc {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 0.5px;
+      color: var(--negro);
+      margin-top: 6px;
+    }
+    .form-section__subtitle {
+      font-family: var(--font-heading);
+      font-weight: 300;
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: 1px;
+      color: var(--negro);
+      margin-top: 24px;
+    }
+    .form-fields {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      margin-top: 24px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .form-field {
+      background: var(--white);
+      border: 1px solid var(--bg-medio);
+      border-radius: 12px;
+      height: 56px;
+      padding: 17px 24px;
+      display: flex;
+      align-items: center;
+      width: 282px;
+      position: relative;
+    }
+    .form-field input,
+    .form-field select {
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 0.5px;
+      color: var(--negro);
+      width: 100%;
+      appearance: none;
+    }
+    .form-field input::placeholder,
+    .form-field select option[disabled] {
+      color: var(--gris-secundario);
+    }
+    .form-field--phone {
+      padding: 0;
+      gap: 0;
+    }
+    .phone-prefix {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--bg-light);
+      height: 56px;
+      padding: 16px 18px;
+      border-radius: 12px 0 0 12px;
+      flex-shrink: 0;
+      width: 130px;
+    }
+    .phone-prefix__flag {
+      width: 33px;
+      height: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+    .phone-prefix__flag .yellow { background: #FFDA2C; height: 12px; border-radius: 2px 2px 0 0; }
+    .phone-prefix__flag .blue { background: #1A47B8; height: 6px; }
+    .phone-prefix__flag .red { background: #F93939; height: 6px; border-radius: 0 0 2px 2px; }
+    .phone-prefix__code {
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--negro);
+    }
+    .phone-prefix__arrow {
+      margin-left: auto;
+    }
+    .form-field--phone input {
+      padding: 17px 24px;
+    }
+    .form-field__arrow {
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .form-legal {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.25px;
+      color: var(--negro);
+      text-align: center;
+      margin-top: 24px;
+    }
+    .form-submit {
+      margin-top: 24px;
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      position: relative;
+    }
+    .footer__brand {
+      background: var(--amarillo-bg);
+      height: 72px;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 120px;
+      position: relative;
+    }
+    .footer__logo {
+      position: absolute;
+      bottom: 0;
+      left: 120px;
+    }
+    .footer__logo img {
+      width: 78px;
+      height: 98px;
+    }
+    .footer__legal {
+      background: rgba(233, 238, 242, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 21px 120px;
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 12px;
+      color: var(--negro);
+    }
+    .footer__links {
+      font-size: 12px;
+    }
+    .footer__links a {
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .hero__bg--desktop { display: block; }
+    .hero__bg--mobile { display: none; }
+
+    /* ========== BOTTOM NAV (mobile) ========== */
+    .bottom-nav {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--verde-bolivar);
+      height: 60px;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border-radius: 12px 12px 0 0;
+    }
+    .bottom-nav__text {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: -0.5px;
+      color: var(--white);
+    }
+
+    /* ========== MOBILE STYLES ========== */
+    @media (max-width: 768px) {
+      body { padding-bottom: 60px; }
+      .bottom-nav { display: flex; }
+
+      .hero__content {
+        padding: 0 18px;
+        text-align: center;
+      }
+      .hero__logo {
+        margin: 0 auto;
+      }
+      .hero__text {
+        max-width: 100%;
+        padding-top: 24px;
+      }
+      .hero__title {
+        font-size: 34px;
+        line-height: 40px;
+        letter-spacing: -0.5px;
+      }
+      .hero__subtitle {
+        margin-top: 12px;
+      }
+      .hero__cta {
+        margin-top: 24px;
+      }
+      .hero__cta .btn-primary {
+        width: 100%;
+      }
+
+      .benefits {
+        padding: 0 18px 24px;
+        margin-top: 24px;
+      }
+      .section-title {
+        font-size: 28px;
+        line-height: 34px;
+      }
+      .benefits__grid {
+        flex-direction: column;
+      }
+      .benefit-card {
+        flex-direction: row;
+      }
+
+      .projects {
+        padding: 0 18px 24px;
+      }
+      .projects__grid {
+        flex-direction: column;
+        gap: 36px;
+      }
+
+      .form-section__inner {
+        padding: 0 18px;
+        text-align: left;
+      }
+      .form-section__subtitle {
+        font-family: var(--font-heading);
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 26px;
+        letter-spacing: 0;
+      }
+      .form-fields {
+        max-width: 100%;
+        justify-content: flex-start;
+      }
+      .form-field {
+        width: 100%;
+      }
+      .form-legal { text-align: left; }
+      .form-submit {
+        width: 100%;
+      }
+      .form-submit .btn-primary {
+        width: 100%;
+      }
+
+      .hero__bg--desktop { display: none; }
+      .hero__bg--mobile { display: block; }
+
+      .footer__brand { padding: 0 18px; }
+      .footer__logo { left: 0; }
+      .footer__legal {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 24px 18px;
+        background: var(--gris-light);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero__bg">
+      <img class="hero__bg--desktop" src="assets/Mask_group.png" alt="Constructora Bolívar - Familia" />
+      <img class="hero__bg--mobile" src="assets/Img-hero-mobile.png" alt="Constructora Bolívar" />
+    </div>
+    <div class="hero__content">
+      <img class="hero__logo" src="assets/LOGO.svg" alt="Constructora Bolívar" />
+      <div class="hero__text">
+        <h1 class="hero__title">Invierte en Colombia<br>desde donde estés</h1>
+        <p class="hero__subtitle">Proceso sencillo y transparente para comprar tu vivienda desde cualquier parte del mundo. Asesoría personalizada y acompañamiento paso a paso.</p>
+        <div class="hero__cta">
+          <a href="#contacto" class="btn-primary">
+            Quiero asesoría gratuita
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M10 8l4 4-4 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(90 12 12)"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BENEFITS ========== -->
+  <section class="benefits">
+    <h2 class="section-title">Tu vivienda con acompañamiento<br>de principio a fin</h2>
+    <div class="benefits__grid">
+      <div class="benefit-card">
+        <div class="benefit-card__icon">
+          <img src="assets/Icon_1.svg" alt="">
+        </div>
+        <div>
+          <h3 class="benefit-card__title">Asesoría desde el exterior</h3>
+          <p class="benefit-card__text">Acompañamiento personalizado sin importar en qué país te encuentres. Nos adaptamos a tu zona horaria.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card__icon">
+          <img src="assets/Icon_2.svg" alt="">
+        </div>
+        <div>
+          <h3 class="benefit-card__title">Proceso transparente</h3>
+          <p class="benefit-card__text">Conoce cada paso del proceso de compra con total claridad. Sin costos ocultos ni letra pequeña.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card__icon">
+          <img src="assets/Icon_3.svg" alt="">
+        </div>
+        <div>
+          <h3 class="benefit-card__title">Financiación adaptada</h3>
+          <p class="benefit-card__text">Planes de pago diseñados para colombianos en el exterior, con opciones de cuota inicial flexible.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card__icon">
+          <img src="assets/Icon_4.svg" alt="">
+        </div>
+        <div>
+          <h3 class="benefit-card__title">Proyectos de confianza</h3>
+          <p class="benefit-card__text">Más de 60 años construyendo en Colombia con los más altos estándares de calidad y respaldo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="projects">
+    <h2 class="section-title">Conoce nuestros proyectos</h2>
+    <div class="projects__grid">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div class="project-card__image">
+          <img src="assets/img-card-1.png" alt="Arroyuelo">
+        </div>
+        <div>
+          <h3 class="project-card__name">Arroyuelo - Entrerios Ciudad Campestre</h3>
+          <div class="project-card__info">
+            <div class="project-card__detail">
+              <img src="assets/Icon_ubicacion.svg" alt="">
+              <span>Barranquilla – Atlántico</span>
+            </div>
+            <div class="project-card__detail">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="#333E33" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>Apartamentos de 2 y 3 habitaciones</span>
+            </div>
+          </div>
+          <div class="project-card__cta">
+            <a href="#contacto" class="btn-outline">Me interesa este proyecto</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 2 -->
+      <div class="project-card">
+        <div class="project-card__image">
+          <img src="assets/img-card-2.png" alt="Guadua">
+        </div>
+        <div>
+          <h3 class="project-card__name">Guadua - Hacienda Peñalisa</h3>
+          <div class="project-card__info">
+            <div class="project-card__detail">
+              <img src="assets/Icon_ubicacion.svg" alt="">
+              <span>Barranquilla – Atlántico</span>
+            </div>
+            <div class="project-card__detail">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="#333E33" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>Apartamentos de 2 y 3 habitaciones</span>
+            </div>
+          </div>
+          <div class="project-card__cta">
+            <a href="#contacto" class="btn-outline">Me interesa este proyecto</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 3 -->
+      <div class="project-card">
+        <div class="project-card__image">
+          <img src="assets/img-card-3.png" alt="La Floresta">
+        </div>
+        <div>
+          <h3 class="project-card__name">La Floresta Living</h3>
+          <div class="project-card__info">
+            <div class="project-card__detail">
+              <img src="assets/Icon_ubicacion.svg" alt="">
+              <span>Barranquilla – Atlántico</span>
+            </div>
+            <div class="project-card__detail">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="#333E33" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>Apartamentos de 2 y 3 habitaciones</span>
+            </div>
+          </div>
+          <div class="project-card__cta">
+            <a href="#contacto" class="btn-outline">Me interesa este proyecto</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FORM ========== -->
+  <section class="form-section" id="contacto">
+    <div class="form-section__inner">
+      <h2 class="section-title">Recibe asesoría gratuita y personalizada</h2>
+      <p class="form-section__desc">Déjanos tus datos y un asesor especializado en compras desde el exterior se pondrá en contacto contigo</p>
+      <p class="form-section__subtitle">Completa tus datos</p>
+      <div class="form-fields">
+        <div class="form-field">
+          <select style="color: var(--gris-secundario);">
+            <option disabled selected>Región que te interesa</option>
+            <option>Costa Atlántica</option>
+            <option>Eje Cafetero</option>
+            <option>Centro</option>
+            <option>Pacífico</option>
+          </select>
+          <span class="form-field__arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M10 8l4 4-4 4" stroke="#6C757D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(90 12 12)"/></svg>
+          </span>
+        </div>
+        <div class="form-field">
+          <input type="text" placeholder="Nombres">
+        </div>
+        <div class="form-field">
+          <input type="email" placeholder="Correo electrónico">
+        </div>
+        <div class="form-field form-field--phone">
+          <div class="phone-prefix">
+            <div class="phone-prefix__flag">
+              <div class="yellow"></div>
+              <div class="blue"></div>
+              <div class="red"></div>
+            </div>
+            <span class="phone-prefix__code">+57</span>
+            <span class="phone-prefix__arrow">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M10 8l4 4-4 4" stroke="#6C757D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(90 12 12)"/></svg>
+            </span>
+          </div>
+          <input type="tel" placeholder="Número celular">
+        </div>
+      </div>
+      <p class="form-legal">Al enviar este formulario aceptas nuestra política de tratamiento de datos personales.</p>
+      <div class="form-submit">
+        <button class="btn-primary" type="button" onclick="submitForm()">Solicitar asesoría</button>
+      </div>
+      <div id="form-thanks" style="display:none; margin-top: 32px; padding: 32px 24px; background: var(--white); border-radius: 12px; box-shadow: var(--sombra-xl); max-width: 600px; margin-left: auto; margin-right: auto; text-align: center;">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style="margin: 0 auto 16px;">
+          <circle cx="24" cy="24" r="24" fill="#095636" fill-opacity="0.1"/>
+          <path d="M14 24l8 8 12-14" stroke="#095636" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3 style="font-family: var(--font-heading); font-weight: 700; font-size: 24px; line-height: 30px; color: var(--negro); margin-bottom: 12px;">¡Gracias por tu interés!</h3>
+        <p style="font-family: var(--font-body); font-size: 16px; line-height: 22px; letter-spacing: 0.5px; color: var(--negro);">Recibimos tus datos. Un asesor especializado en compras desde el exterior se pondrá en contacto contigo muy pronto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer__brand">
+      <div class="footer__logo">
+        <img src="assets/LOGO.svg" alt="Constructora Bolívar">
+      </div>
+    </div>
+    <div class="footer__legal">
+      <span>© 2026 Constructora Bolivar. Todos los derechos reservados</span>
+      <span class="footer__links">
+        <a href="#">Términos y condiciones</a> - <a href="#">Políticas de privacidad</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    function submitForm() {
+      var formFields = document.querySelector('.form-fields');
+      var formLegal = document.querySelector('.form-legal');
+      var formSubtitle = document.querySelector('.form-section__subtitle');
+      var formSubmit = document.querySelector('.form-submit');
+      var formThanks = document.getElementById('form-thanks');
+
+      formSubtitle.style.display = 'none';
+      formFields.style.display = 'none';
+      formLegal.style.display = 'none';
+      formSubmit.style.display = 'none';
+      formThanks.style.display = 'block';
+    }
+  </script>
+
+  <!-- ========== BOTTOM NAV (mobile) ========== -->
+  <a href="#contacto" class="bottom-nav">
+    <span class="bottom-nav__text">Solicitar asesoría</span>
+  </a>
+
+</body>
+</html>
