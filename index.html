@@ -128,6 +128,17 @@
     }
     .btn-outline:hover { background: rgba(9, 86, 54, 0.05); }
     .hero__cta { margin-top: 18px; }
+    .hero-form {
+      margin-top: 24px;
+      max-width: 733px;
+    }
+    .hero-form__title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 30px;
+      color: var(--negro);
+    }
 
     /* ========== BENEFITS ========== */
     .benefits {
@@ -249,44 +260,13 @@
       margin-top: 12px;
     }
 
-    /* ========== FORM SECTION ========== */
-    .form-section {
-      background: var(--bg);
-      padding: 24px 0;
-    }
-    .form-section__inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 120px;
-      text-align: center;
-    }
-    .form-section__desc {
-      font-family: var(--font-body);
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 22px;
-      letter-spacing: 0.5px;
-      color: var(--negro);
-      margin-top: 6px;
-    }
-    .form-section__subtitle {
-      font-family: var(--font-heading);
-      font-weight: 300;
-      font-size: 24px;
-      line-height: 32px;
-      letter-spacing: 1px;
-      color: var(--negro);
-      margin-top: 24px;
-    }
     .form-fields {
       display: flex;
       flex-wrap: wrap;
       gap: 24px;
-      justify-content: center;
-      margin-top: 24px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      justify-content: flex-start;
+      margin-top: 18px;
+      max-width: 588px;
     }
     .form-field {
       background: var(--white);
@@ -366,11 +346,17 @@
       line-height: 18px;
       letter-spacing: 0.25px;
       color: var(--negro);
-      text-align: center;
-      margin-top: 24px;
+      text-align: left;
+      margin-top: 18px;
     }
     .form-submit {
-      margin-top: 24px;
+      margin-top: 18px;
+    }
+    .projects-cta {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 8px 0 34px;
+      text-align: center;
     }
 
     /* ========== FOOTER ========== */
@@ -444,6 +430,10 @@
     @media (max-width: 768px) {
       body { padding-bottom: 60px; }
       .bottom-nav { display: flex; }
+      .hero {
+        /* Keep enough space for overlayed mobile form */
+        padding-bottom: 420px;
+      }
 
       .hero__content {
         padding: 0 18px;
@@ -470,6 +460,15 @@
       .hero__cta .btn-primary {
         width: 100%;
       }
+      .hero-form {
+        margin-top: 24px;
+        max-width: 100%;
+      }
+      .hero-form__title {
+        font-size: 20px;
+        line-height: 26px;
+        text-align: center;
+      }
 
       .benefits {
         padding: 0 18px 24px;
@@ -494,17 +493,6 @@
         gap: 36px;
       }
 
-      .form-section__inner {
-        padding: 0 18px;
-        text-align: left;
-      }
-      .form-section__subtitle {
-        font-family: var(--font-heading);
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 26px;
-        letter-spacing: 0;
-      }
       .form-fields {
         max-width: 100%;
         justify-content: flex-start;
@@ -517,6 +505,12 @@
         width: 100%;
       }
       .form-submit .btn-primary {
+        width: 100%;
+      }
+      .projects-cta {
+        padding: 0 18px 24px;
+      }
+      .projects-cta .btn-primary {
         width: 100%;
       }
 
@@ -548,13 +542,54 @@
       <div class="hero__text">
         <h1 class="hero__title">Invierte en Colombia<br>desde donde estés</h1>
         <p class="hero__subtitle">Proceso sencillo y transparente para comprar tu vivienda desde cualquier parte del mundo. Asesoría personalizada y acompañamiento paso a paso.</p>
-        <div class="hero__cta">
-          <a href="#contacto" class="btn-primary">
-            Quiero asesoría gratuita
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M10 8l4 4-4 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(90 12 12)"/>
+        <div class="hero-form" id="contacto">
+          <p class="hero-form__title">Completa tus datos</p>
+          <div class="form-fields">
+            <div class="form-field">
+              <select style="color: var(--gris-secundario);">
+                <option disabled selected>Región que te interesa</option>
+                <option>Costa Atlántica</option>
+                <option>Eje Cafetero</option>
+                <option>Centro</option>
+                <option>Pacífico</option>
+              </select>
+              <span class="form-field__arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M10 8l4 4-4 4" stroke="#6C757D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(90 12 12)"/></svg>
+              </span>
+            </div>
+            <div class="form-field">
+              <input type="text" placeholder="Nombres">
+            </div>
+            <div class="form-field">
+              <input type="email" placeholder="Correo electrónico">
+            </div>
+            <div class="form-field form-field--phone">
+              <div class="phone-prefix">
+                <div class="phone-prefix__flag">
+                  <div class="yellow"></div>
+                  <div class="blue"></div>
+                  <div class="red"></div>
+                </div>
+                <span class="phone-prefix__code">+57</span>
+                <span class="phone-prefix__arrow">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M10 8l4 4-4 4" stroke="#6C757D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(90 12 12)"/></svg>
+                </span>
+              </div>
+              <input type="tel" placeholder="Número celular">
+            </div>
+          </div>
+          <p class="form-legal">Al enviar este formulario aceptas nuestra política de tratamiento de datos personales.</p>
+          <div class="form-submit">
+            <button class="btn-primary" type="button" onclick="submitForm()">Solicitar asesoría</button>
+          </div>
+          <div id="form-thanks" style="display:none; margin-top: 18px; padding: 32px 24px; background: var(--white); border-radius: 12px; box-shadow: var(--sombra-xl); max-width: 588px; text-align: center;">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style="margin: 0 auto 16px;">
+              <circle cx="24" cy="24" r="24" fill="#095636" fill-opacity="0.1"/>
+              <path d="M14 24l8 8 12-14" stroke="#095636" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-          </a>
+            <h3 style="font-family: var(--font-heading); font-weight: 700; font-size: 24px; line-height: 30px; color: var(--negro); margin-bottom: 12px;">¡Gracias por tu interés!</h3>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 22px; letter-spacing: 0.5px; color: var(--negro);">Recibimos tus datos. Un asesor especializado en compras desde el exterior se pondrá en contacto contigo muy pronto.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -587,7 +622,7 @@
           <img src="assets/Icon_3.svg" alt="">
         </div>
         <div>
-          <h3 class="benefit-card__title">Financiación adaptada</h3>
+          <h3 class="benefit-card__title">Estudio de crédito gratis</h3>
           <p class="benefit-card__text">Planes de pago diseñados para colombianos en el exterior, con opciones de cuota inicial flexible.</p>
         </div>
       </div>
@@ -676,59 +711,8 @@
     </div>
   </section>
 
-  <!-- ========== FORM ========== -->
-  <section class="form-section" id="contacto">
-    <div class="form-section__inner">
-      <h2 class="section-title">Recibe asesoría gratuita y personalizada</h2>
-      <p class="form-section__desc">Déjanos tus datos y un asesor especializado en compras desde el exterior se pondrá en contacto contigo</p>
-      <p class="form-section__subtitle">Completa tus datos</p>
-      <div class="form-fields">
-        <div class="form-field">
-          <select style="color: var(--gris-secundario);">
-            <option disabled selected>Región que te interesa</option>
-            <option>Costa Atlántica</option>
-            <option>Eje Cafetero</option>
-            <option>Centro</option>
-            <option>Pacífico</option>
-          </select>
-          <span class="form-field__arrow">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M10 8l4 4-4 4" stroke="#6C757D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(90 12 12)"/></svg>
-          </span>
-        </div>
-        <div class="form-field">
-          <input type="text" placeholder="Nombres">
-        </div>
-        <div class="form-field">
-          <input type="email" placeholder="Correo electrónico">
-        </div>
-        <div class="form-field form-field--phone">
-          <div class="phone-prefix">
-            <div class="phone-prefix__flag">
-              <div class="yellow"></div>
-              <div class="blue"></div>
-              <div class="red"></div>
-            </div>
-            <span class="phone-prefix__code">+57</span>
-            <span class="phone-prefix__arrow">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M10 8l4 4-4 4" stroke="#6C757D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(90 12 12)"/></svg>
-            </span>
-          </div>
-          <input type="tel" placeholder="Número celular">
-        </div>
-      </div>
-      <p class="form-legal">Al enviar este formulario aceptas nuestra política de tratamiento de datos personales.</p>
-      <div class="form-submit">
-        <button class="btn-primary" type="button" onclick="submitForm()">Solicitar asesoría</button>
-      </div>
-      <div id="form-thanks" style="display:none; margin-top: 32px; padding: 32px 24px; background: var(--white); border-radius: 12px; box-shadow: var(--sombra-xl); max-width: 600px; margin-left: auto; margin-right: auto; text-align: center;">
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style="margin: 0 auto 16px;">
-          <circle cx="24" cy="24" r="24" fill="#095636" fill-opacity="0.1"/>
-          <path d="M14 24l8 8 12-14" stroke="#095636" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <h3 style="font-family: var(--font-heading); font-weight: 700; font-size: 24px; line-height: 30px; color: var(--negro); margin-bottom: 12px;">¡Gracias por tu interés!</h3>
-        <p style="font-family: var(--font-body); font-size: 16px; line-height: 22px; letter-spacing: 0.5px; color: var(--negro);">Recibimos tus datos. Un asesor especializado en compras desde el exterior se pondrá en contacto contigo muy pronto.</p>
-      </div>
-    </div>
+  <section class="projects-cta">
+    <a href="#contacto" class="btn-primary">Quiero asesoría gratuita</a>
   </section>
 
   <!-- ========== FOOTER ========== -->
@@ -739,7 +723,7 @@
       </div>
     </div>
     <div class="footer__legal">
-      <span>© 2026 Constructora Bolivar. Todos los derechos reservados</span>
+      <span>© 2024 Constructora Bolivar. Todos los derechos reservados</span>
       <span class="footer__links">
         <a href="#">Términos y condiciones</a> - <a href="#">Políticas de privacidad</a>
       </span>
@@ -750,11 +734,11 @@
     function submitForm() {
       var formFields = document.querySelector('.form-fields');
       var formLegal = document.querySelector('.form-legal');
-      var formSubtitle = document.querySelector('.form-section__subtitle');
+      var formTitle = document.querySelector('.hero-form__title');
       var formSubmit = document.querySelector('.form-submit');
       var formThanks = document.getElementById('form-thanks');
 
-      formSubtitle.style.display = 'none';
+      formTitle.style.display = 'none';
       formFields.style.display = 'none';
       formLegal.style.display = 'none';
       formSubmit.style.display = 'none';
